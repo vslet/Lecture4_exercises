@@ -1,0 +1,61 @@
+# Задача 15. Група запалянковци решили да си закупят билети за Евро 2016. Цената на
+# билета се определя спрямо две категории:
+# VIP – 499.99 лева
+# Normal – 249.99 лева
+# Запалянковците имат определен бюджет, a броят на хората в групата определя какъв процент от бюджета трябва да се задели за транспорт:
+# От 1 до 4 – 75% от бюджета
+# От 5 до 9 – 60% от бюджета
+# От 10 до 24 – 50% от бюджета
+# От 25 до 49 – 40% от бюджета
+# 50 или повече – 25% от бюджета
+# да си купят билети за избраната категория, както и колко пари ще им останат или ще са им нужни.
+# Входни данни
+# Входът се чете от конзолата и съдържа точно 3 реда:
+# На първия ред е бюджетът – реално число в интервала [1 000.00 … 1 000 000.00.
+# На втория ред е категорията – "VIP" или "Normal".
+# На третия ред е броят на хората в групата – цяло число в интервала [1 … 200].
+# Изходни данни
+# Да се отпечата на конзолата един ред:
+# Ако бюджетът е достатъчен:
+# "Yes! You have {N} leva left." – където N са останалите пари на групата.
+# Ако бюджетът НЕ Е достатъчен:
+# "Not enough money! You need {М} leva." – където М е сумата, която не достига.
+# Сумите трябва да са форматирани с точност до два символа след десетичния знак
+
+budget = int(input("Our budget is: "))
+category = input("Please choose 'VIP' or 'Normal': ")
+n_part = int(input("Please choose participants:"))
+
+if budget in range(1000, 1000001):
+    pass
+else:
+    print("Not enough money.Please try to increase your savings and try again.Thank you.")
+
+if n_part in range(1, 201):
+    if n_part in range(1, 5):
+        spendings_1 = (75 * budget) / 100
+        rem_transport_1 = budget - spendings_1
+        print(rem_transport_1)
+    elif n_part in range(5, 10):
+        spendings_2 = (60 * budget) / 100
+        rem_transport_2 = budget - spendings_2
+    elif n_part in range(10, 25):
+        spendings_3 = (50 * budget) / 100
+        rem_transport_3 = budget - spendings_3
+    elif n_part in range(25, 50):
+        spendings_4 = (40 * budget) / 100
+        rem_transport_4 = budget - spendings_4
+    else:
+        spendings_5 = (25 * budget) / 100
+        rem_transport_5 = budget - spendings_5
+else:
+    print("Participants need to be between 1 and 200")
+
+if category == "VIP":
+    price_ticket = 499.99
+    remaining = budget - price_ticket
+
+elif category == "Normal":
+    price_ticket = 249.99
+    remaining = price_ticket * n_part
+
