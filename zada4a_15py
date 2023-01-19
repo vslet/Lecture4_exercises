@@ -29,33 +29,113 @@ n_part = int(input("Please choose participants:"))
 if budget in range(1000, 1000001):
     pass
 else:
-    print("Not enough money.Please try to increase your savings and try again.Thank you.")
+    print("Not enough money.")
 
 if n_part in range(1, 201):
     if n_part in range(1, 5):
-        spendings_1 = (75 * budget) / 100
-        rem_transport_1 = budget - spendings_1
-        print(rem_transport_1)
+        spendings = (75 * budget) / 100
+        rem_transport = budget - spendings  # 1000 - 750 = 250
+        if category == "Normal":
+            price_ticket = 249.99
+            remaining_ticket = price_ticket * n_part
+            if rem_transport > remaining_ticket:
+                left = rem_transport - remaining_ticket
+                print(f"Yes! You have {round(left, 2)} leva left.")
+            else:
+                left = remaining_ticket - rem_transport
+                print(f"Not enough money! You need {round(left, 2)} leva.")
+        elif category == "VIP":
+            price_ticket = 499.99
+            remaining_ticket = price_ticket * n_part  # for 1 pers:499.99
+            if rem_transport > remaining_ticket:
+                left = rem_transport - remaining_ticket
+                print(f"Yes! You have {round(left, 2)} leva left.")
+            else:
+                left = remaining_ticket - rem_transport
+                print(f"Not enough money! You need {round(left, 2)} leva.")
     elif n_part in range(5, 10):
-        spendings_2 = (60 * budget) / 100
-        rem_transport_2 = budget - spendings_2
+        spendings = (60 * budget) / 100
+        rem_transport = budget - spendings  # 1000 - 750 = 250
+        if category == "Normal":
+            price_ticket = 249.99
+            remaining_ticket = price_ticket * n_part
+            if rem_transport > remaining_ticket:
+                left = rem_transport - remaining_ticket
+                print(f"Yes! You have {round(left, 2)} leva left.")
+            else:
+                left = remaining_ticket - rem_transport
+                print(f"Not enough money! You need {round(left, 2)} leva.")
+        elif category == "VIP":
+            price_ticket = 499.99
+            remaining_ticket = price_ticket * n_part  # for 1 pers:499.99
+            if rem_transport > remaining_ticket:
+                left = rem_transport - remaining_ticket
+                print(f"Yes! You have {round(left, 2)} leva left.")
+            else:
+                left = remaining_ticket - rem_transport
+                print(f"Not enough money! You need {round(left, 2)} leva.")
     elif n_part in range(10, 25):
-        spendings_3 = (50 * budget) / 100
-        rem_transport_3 = budget - spendings_3
+        spendings = (50 * budget) / 100
+        rem_transport = budget - spendings
+        if category == "Normal":
+            price_ticket = 249.99
+            remaining_ticket = price_ticket * n_part
+            if rem_transport > remaining_ticket:
+                left = rem_transport - remaining_ticket
+                print(f"Yes! You have {round(left, 2)} leva left.")
+            else:
+                left = remaining_ticket - rem_transport
+                print(f"Not enough money! You need {round(left, 2)} leva.")
+        elif category == "VIP":
+            price_ticket = 499.99
+            remaining_ticket = price_ticket * n_part  # for 1 pers:499.99
+            if rem_transport > remaining_ticket:
+                left = rem_transport - remaining_ticket
+                print(f"Yes! You have {round(left, 2)} leva left.")
+            else:
+                left = remaining_ticket - rem_transport
+                print(f"Not enough money! You need {round(left, 2)} leva.")
     elif n_part in range(25, 50):
-        spendings_4 = (40 * budget) / 100
-        rem_transport_4 = budget - spendings_4
+        spendings = (40 * budget) / 100
+        rem_transport = budget - spendings
+        if category == "Normal":
+            price_ticket = 249.99
+            remaining_ticket = price_ticket * n_part
+            if rem_transport > remaining_ticket:
+                left = rem_transport - remaining_ticket
+                print(f"Yes! You have {round(left, 2)} leva left.")
+            else:
+                left = remaining_ticket - rem_transport
+                print(f"Not enough money! You need {round(left, 2)} leva.")
+        elif category == "VIP":
+            price_ticket = 499.99
+            remaining_ticket = price_ticket * n_part  # for 1 pers:499.99
+            if rem_transport > remaining_ticket:
+                left = rem_transport - remaining_ticket
+                print(f"Yes! You have {round(left, 2)} leva left.")
+            else:
+                left = remaining_ticket - rem_transport
+                print(f"Not enough money! You need {round(left, 2)} leva.")
     else:
-        spendings_5 = (25 * budget) / 100
-        rem_transport_5 = budget - spendings_5
+        spendings = (25 * budget) / 100
+        rem_transport = budget - spendings  # 1000 - 250 = 750
+        if category == "Normal":
+            price_ticket = 249.99
+            remaining_ticket = price_ticket * n_part
+            if rem_transport > remaining_ticket:
+                left = rem_transport - remaining_ticket
+                print(f"Yes! You have {round(left, 2)} leva left.")
+            else:
+                left = remaining_ticket - rem_transport
+                print(f"Not enough money! You need {round(left, 2)} leva.")
+        elif category == "VIP":
+            price_ticket = 499.99
+            remaining_ticket = price_ticket * n_part  # for 1 pers:499.99
+            if rem_transport > remaining_ticket:
+                left = rem_transport - remaining_ticket
+                print(f"Yes! You have {round(left, 2)} leva left.")
+            else:
+                left = remaining_ticket - rem_transport
+                print(f"Not enough money! You need {round(left, 2)} leva.")
 else:
     print("Participants need to be between 1 and 200")
-
-if category == "VIP":
-    price_ticket = 499.99
-    remaining = budget - price_ticket
-
-elif category == "Normal":
-    price_ticket = 249.99
-    remaining = price_ticket * n_part
-
